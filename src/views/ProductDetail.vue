@@ -22,8 +22,10 @@ async function load() {
   try {
     product.value = await fetchProductById(props.id)
     activeImage.value = product.value.thumbnail
+    document.title = `${product.value.title} - MiniStore.`
   } catch {
     isError.value = true
+    document.title = 'Produk Tidak Ditemukan - MiniStore.'
   } finally {
     isLoading.value = false
   }
@@ -35,14 +37,14 @@ watch(() => props.id, load)
 
 <template>
   <section class="mx-auto max-w-4xl px-4 py-6">
-    <RouterLink to="/" class="text-sm text-slate-500 hover:text-slate-800">&larr; Back to Products</RouterLink>
+    <RouterLink to="/" class="text-sm text-neutral-500 hover:text-neutral-800">&larr; Back to Products</RouterLink>
 
     <LoadingSpinner v-if="isLoading" />
     <ErrorState v-else-if="isError" @retry="load" />
 
     <div v-else-if="product" class="mt-4 grid gap-8 sm:grid-cols-2">
       <div>
-        <div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-100">
+        <div class="aspect-square w-full overflow-hidden rounded-lg bg-neutral-100">
           <img :src="activeImage" :alt="product.title" class="h-full w-full object-cover" />
         </div>
         <div v-if="product.images?.length > 1" class="mt-3 flex gap-2 overflow-x-auto">
@@ -51,36 +53,41 @@ watch(() => props.id, load)
             :key="img"
             type="button"
             class="h-16 w-16 shrink-0 overflow-hidden rounded-md border"
-            :class="img === activeImage ? 'border-slate-900' : 'border-slate-200'"
+            :class="img === activeImage ? 'border-neutral-900' : 'border-neutral-200'"
             @click="activeImage = img"
           >
-            <img :src="img" class="h-full w-full object-cover" />
+            <img :src="img" :alt="`${product.title} - gambar tambahan`" class="h-full w-full object-cover" />
           </button>
         </div>
       </div>
 
       <div>
-        <h1 class="text-2xl font-bold text-slate-900">{{ product.title }}</h1>
-        <p class="mt-1 text-sm text-slate-500">{{ product.category }}</p>
-        <p class="mt-4 text-sm text-slate-600">{{ product.description }}</p>
+        <h1 class="text-2xl font-bold text-neutral-900">{{ product.title }}</h1>
+        <p class="mt-1 flex items-center gap-1 text-sm text-neutral-800 font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-neutral-800" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          {{ product.rating }}
+        </p>
+        <p class="mt-4 text-sm text-neutral-600">{{ product.description }}</p>
 
         <div class="mt-4 flex items-baseline gap-2">
-          <span class="text-2xl font-bold text-slate-900">${{ product.price }}</span>
+          <span class="text-2xl font-semibold text-sky-400">${{ product.price }}</span>
           <span v-if="product.discountPercentage" class="text-sm text-emerald-600">
             -{{ product.discountPercentage }}%
           </span>
         </div>
 
         <dl class="mt-4 grid grid-cols-2 gap-2 text-sm">
-          <dt class="text-slate-500">Rating</dt>
-          <dd class="font-medium">{{ product.rating }}</dd>
-          <dt class="text-slate-500">Stock</dt>
+          <dt class="text-neutral-500">Category</dt>
+          <dd class="font-medium capitalize">{{ product.category }}</dd>
+          <dt class="text-neutral-500">Stock</dt>
           <dd class="font-medium">{{ product.stock }}</dd>
         </dl>
 
         <button
           type="button"
-          class="mt-6 w-full rounded-md border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50"
+          class="mt-6 w-full rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
           @click="favorites.toggle(product.id)"
         >
           {{ favorites.isFavorite(product.id) ? '♥ Favorite' : '♡ Add to Favorite' }}

@@ -9,7 +9,7 @@ defineEmits(["update:modelValue"]);
 <template>
   <select
     :value="modelValue"
-    class="w-40 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500 sm:w-56"
+    class="w-40 rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 sm:w-56"
     @change="$emit('update:modelValue', $event.target.value)"
   >
     <option value="">All Categories</option>
