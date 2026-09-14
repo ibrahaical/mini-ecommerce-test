@@ -5,7 +5,7 @@
 
 Aplikasi SPA katalog produk e-commerce menggunakan **Vue 3, Vite, Tailwind CSS v4**, dan **DummyJSON API**. Dibuat untuk Technical Test Frontend Developer dengan fokus pada clean code, separation of concerns, dan struktur aplikasi yang scalable.
 
-**Live Demo:** https://mini-ecommerce.pages.dev
+**Live Demo:** https://miniecommerce.pages.dev
 
 ## Installation
 
