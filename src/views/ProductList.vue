@@ -43,15 +43,18 @@ onMounted(() => {
       <p class="mx-auto mt-3 max-w-2xl text-slate-600">
         Temukan berbagai produk pilihan dengan mudah dan cepat.
       </p>
+
+      <div class="mx-auto mt-6 max-w-2xl">
+        <SearchInput
+          :model-value="search"
+          class="w-full"
+          @update:model-value="setSearch"
+        />
+      </div>
     </div>
   </section>
   <section class="mx-auto max-w-6xl px-4 py-6">
-    <div class="mt-4 flex flex-col gap-3 sm:flex-row">
-      <SearchInput
-        :model-value="search"
-        class="sm:max-w-sm"
-        @update:model-value="setSearch"
-      />
+    <div class="flex justify-end">
       <CategoryFilter
         :model-value="category"
         :categories="categories"
@@ -72,7 +75,9 @@ onMounted(() => {
     />
 
     <template v-else>
-      <div class="mt-6 grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <div
+        class="mt-6 grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4"
+      >
         <ProductCard
           v-for="product in products"
           :key="product.id"
