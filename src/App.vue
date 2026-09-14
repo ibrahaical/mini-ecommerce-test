@@ -9,7 +9,7 @@ const favorites = useFavoritesStore()
   <div class="min-h-screen bg-slate-50">
     <header class="border-b border-slate-200 bg-white">
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <RouterLink to="/" class="text-lg font-bold text-slate-900">Mini Ecommerce</RouterLink>
+        <RouterLink to="/" class="text-lg font-bold text-slate-900">Mini E-Commerce</RouterLink>
         <RouterLink
           to="/favorites"
           class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900"

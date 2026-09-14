@@ -31,13 +31,13 @@ src/
 
 ## Tech Stack
 
-* **Vue 3** — Composition API
-* **Vite** — Build tool
-* **Vue Router** — SPA routing
-* **Pinia** — State management
-* **Axios** — HTTP client
-* **Tailwind CSS v4** — Responsive styling
-* **DummyJSON** — Product REST API
+* **Vue 3** - Composition API
+* **Vite** - Build tool
+* **Vue Router** - SPA routing
+* **Pinia** - State management
+* **Axios** - HTTP client
+* **Tailwind CSS v4** - Responsive styling
+* **DummyJSON** - Product REST API
 
 ## Fitur
 
@@ -52,14 +52,10 @@ src/
 * Responsive Mobile, Tablet, dan Desktop
 * SPA routing dengan Vue Router
 
-## Bonus / Belum Diimplementasikan
-
-**WebRTC P2P Chat** belum diimplementasikan agar fokus pada stabilitas fitur utama dan kualitas struktur aplikasi.
-
 ## Known Issues
 
-* Loading gambar bergantung pada koneksi dan server DummyJSON.
-* Data pencarian dan kategori mengikuti ketersediaan data dari DummyJSON API.
+1. **WebRTC P2P Chat** belum diimplementasikan agar fokus pada stabilitas fitur utama dan kualitas struktur aplikasi.
+2. **Filter Search & Category Tidak Bisa Digabungkan** karena keterbatasan DummyJSON API (`/products/search` dan `/products/category/{slug}` adalah endpoint terpisah). Saat ini, penggunaan search akan mereset filter kategori, dan sebaliknya.
 
 ## Penggunaan AI & Alur Pengerjaan
 
