@@ -6,7 +6,7 @@ defineEmits(['retry'])
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-3 rounded-lg border border-red-200 bg-red-50 py-16 text-center">
+  <div class="mt-4 flex flex-col items-center justify-center gap-3 rounded-lg border border-red-200 bg-red-50 py-16 text-center">
     <p class="text-sm font-medium text-red-700">{{ message }}</p>
     <button
       type="button"
