@@ -37,17 +37,22 @@ watch(() => props.id, load)
 
 <template>
   <section class="mx-auto max-w-4xl px-4 py-6">
-    <RouterLink to="/" class="text-sm text-neutral-500 hover:text-neutral-800">&larr; Back to Products</RouterLink>
+    <RouterLink to="/" class="inline-flex items-center gap-1.5 text-sm font-light text-neutral-500 hover:text-neutral-800">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+      Back to Products
+    </RouterLink>
 
     <LoadingSpinner v-if="isLoading" />
     <ErrorState v-else-if="isError" @retry="load" />
 
     <div v-else-if="product" class="mt-4 grid gap-8 sm:grid-cols-2">
-      <div>
+      <div class="min-w-0">
         <div class="aspect-square w-full overflow-hidden rounded-lg bg-neutral-100">
           <img :src="activeImage" :alt="product.title" class="h-full w-full object-cover" />
         </div>
-        <div v-if="product.images?.length > 1" class="mt-3 flex gap-2 overflow-x-auto">
+        <div v-if="product.images?.length > 1" class="mt-3 flex gap-2 overflow-x-auto pb-2">
           <button
             v-for="img in product.images"
             :key="img"

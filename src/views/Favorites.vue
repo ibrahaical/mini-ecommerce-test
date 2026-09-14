@@ -41,8 +41,11 @@ watch(() => favorites.ids, loadFavoriteProducts, { immediate: true })
   <!-- Hero Section (left-aligned) -->
   <section class="bg-neutral-100 border-b border-neutral-200">
     <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
-      <RouterLink to="/" class="inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-neutral-800">
-        &larr; Back to Products
+      <RouterLink to="/" class="inline-flex items-center gap-1.5 text-sm font-light text-neutral-500 hover:text-neutral-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Back to Products
       </RouterLink>
       <h1 class="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
         My Favorites
