@@ -54,15 +54,15 @@ src/
 * Loading, error, dan empty state
 * Responsive Mobile, Tablet, dan Desktop
 * SPA routing dengan Vue Router
+* **WebRTC P2P Text Chat** (Manual Signaling dengan Copy-Paste)
 
 ## Known Issues
 
-1. **WebRTC P2P Chat** belum diimplementasikan agar fokus pada stabilitas fitur utama dan kualitas struktur aplikasi.
-2. **Filter Search & Category Tidak Bisa Digabungkan** karena keterbatasan DummyJSON API (`/products/search` dan `/products/category/{slug}` adalah endpoint terpisah). Saat ini, penggunaan search akan mereset filter kategori, dan sebaliknya.
+1. **Filter Search & Category Tidak Bisa Digabungkan** karena keterbatasan DummyJSON API (`/products/search` dan `/products/category/{slug}` adalah endpoint terpisah). Saat ini, penggunaan search akan mereset filter kategori, dan sebaliknya.
 
 ## Penggunaan AI & Alur Pengerjaan
 
-AI digunakan sebagai **mentor diskusi dan referensi dokumentasi**, bukan sebagai *auto-generator* kode. ChatGPT (diskusi & konsultasi), Gemini (perencanaan milestone), dan Claude (validasi milestone & struktur).. Pengerjaan dilakukan dan diuji secara manual dengan alur *milestone*:
+AI digunakan sebagai **mentor diskusi dan referensi dokumentasi**, bukan sebagai *auto-generator* kode. ChatGPT (diskusi & konsultasi), Gemini (perencanaan milestone), dan Claude (validasi milestone & struktur), kecuali pada fitur **WebRTC P2P Text Chat** yang dibangun murni dengan AI coding assistant (Antigravity). Pengerjaan requirement utama dilakukan dan diuji secara manual dengan alur *milestone*:
 
 1. **Setup** - Inisialisasi Vue 3, Vite, Tailwind CSS, Vue Router, dan struktur folder.
 2. **API & State** - Integrasi DummyJSON menggunakan Axios serta pengelolaan state dan error.

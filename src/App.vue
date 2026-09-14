@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { useFavoritesStore } from '@/stores/favorites'
+import P2PChat from '@/components/P2PChat.vue'
 
 const favorites = useFavoritesStore()
 </script>
@@ -22,8 +23,10 @@ const favorites = useFavoritesStore()
       </nav>
     </header>
 
-    <main>
+    <main class="pb-24">
       <RouterView />
     </main>
+
+    <P2PChat />
   </div>
 </template>
