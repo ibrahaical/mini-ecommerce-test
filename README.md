@@ -1,4 +1,7 @@
-# Mini E-Commerce Product Browser
+# Technical Test Frontend Developer — Vue.js
+
+**Candidate:** Falachul Akhadihima Ibrahaical
+**Position:** Frontend Developer
 
 Aplikasi SPA katalog produk e-commerce menggunakan **Vue 3, Vite, Tailwind CSS v4**, dan **DummyJSON API**. Dibuat untuk Technical Test Frontend Developer dengan fokus pada clean code, separation of concerns, dan struktur aplikasi yang scalable.
 
@@ -61,11 +64,11 @@ src/
 
 AI digunakan sebagai **mentor diskusi dan referensi dokumentasi**, bukan sebagai *auto-generator* kode. ChatGPT (diskusi & konsultasi), Gemini (perencanaan milestone), dan Claude (validasi milestone & struktur).. Pengerjaan dilakukan dan diuji secara manual dengan alur *milestone*:
 
-1. **Setup** — Inisialisasi Vue 3, Vite, Tailwind CSS, Vue Router, dan struktur folder.
-2. **API & State** — Integrasi DummyJSON menggunakan Axios serta pengelolaan state dan error.
-3. **Komponen** — Pembuatan komponen UI reusable seperti ProductCard, SearchInput, dan CategoryFilter.
-4. **Product List** — Implementasi daftar produk, pencarian, filter, dan pagination.
-5. **Detail & Favorite** — Implementasi detail produk dan sistem favorite dengan Pinia serta localStorage.
-6. **Finalisasi** — Pengujian, responsive UI, dokumentasi, dan deployment ke Cloudflare Pages.
+1. **Setup** - Inisialisasi Vue 3, Vite, Tailwind CSS, Vue Router, dan struktur folder.
+2. **API & State** - Integrasi DummyJSON menggunakan Axios serta pengelolaan state dan error.
+3. **Komponen** - Pembuatan komponen UI reusable seperti ProductCard, SearchInput, dan CategoryFilter.
+4. **Product List** - Implementasi daftar produk, pencarian, filter, dan pagination.
+5. **Detail & Favorite** - Implementasi detail produk dan sistem favorite dengan Pinia serta localStorage.
+6. **Finalisasi** - Pengujian, responsive UI, dokumentasi, dan deployment ke Cloudflare Pages.
 
 Pendekatan ini membantu memastikan setiap fitur dipahami, diimplementasikan, dan diuji secara manual.
