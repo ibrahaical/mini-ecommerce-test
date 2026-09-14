@@ -1,4 +1,4 @@
-# Technical Test Frontend Developer — Vue.js
+# Technical Test Frontend Developer - Vue.js
 
 **Candidate:** Falachul Akhadihima Ibrahaical
 **Position:** Frontend Developer
@@ -24,13 +24,25 @@ npm run build
 
 ```text
 src/
-├── components/    # UI reusable
-├── views/         # Halaman aplikasi
-├── services/      # REST API / Axios
-├── composables/   # Logic & reactive state
-├── stores/        # Global state / Pinia
-└── router/        # Vue Router
+├── components/    # UI reusable (Card, Input, Spinner, Error/Empty State)
+├── views/         # Halaman aplikasi (ProductList, Detail, Favorites, 404)
+├── services/      # REST API / Axios (api.js)
+├── composables/   # Logic & reactive local state (useProducts.js)
+├── stores/        # Global state / Pinia (favorites.js)
+└── router/        # Vue Router (index.js)
 ```
+
+## Keputusan Teknis (Technical Decisions)
+
+Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
+
+1. **Komponen & UI Reusable:** Elemen UI yang sering dipakai (Card, Input, Spinner, Error State) dipisah ke `src/components/`. Halaman utama (`src/views/`) murni fokus pada struktur *layout*.
+2. **State Management:** 
+   - **Global (Pinia):** Mengelola data Favorit agar reaktif di semua halaman dan tersimpan permanen di `localStorage`.
+   - **Local (Composable):** Logika *fetch* produk, filter, dan pagination dibungkus dalam `useProducts.js` agar file UI tidak membengkak.
+3. **REST API & Async:** Semua pemanggilan API dipusatkan di `services/api.js` menggunakan **Axios** dan `async/await`. Menerapkan `AbortController` (signal) untuk membatalkan *request* API lama jika user mengetik/mencari dengan sangat cepat (mencegah *race-condition*).
+4. **Error Handling:** Memakai blok `try...catch`. Jika API gagal, aplikasi tidak akan *crash*, melainkan menampilkan komponen `<ErrorState />` dengan tombol *Retry*. Tersedia juga halaman `404 Not Found`.
+5. **Struktur Project yang Scalable:** Menerapkan *Separation of Concerns*. Folder dibagi jelas sesuai fungsi (`components`, `views`, `services`, `stores`, `composables`) mengikuti standar requirement.
 
 ## Tech Stack
 
