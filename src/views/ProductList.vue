@@ -72,7 +72,7 @@ onMounted(() => {
     />
 
     <template v-else>
-      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <div class="mt-6 grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
         <ProductCard
           v-for="product in products"
           :key="product.id"
