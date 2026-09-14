@@ -19,11 +19,13 @@ const favorites = useFavoritesStore()
         loading="lazy"
       />
     </div>
+
     <div class="flex flex-1 flex-col gap-1 p-4">
       <h3 class="line-clamp-1 text-sm font-semibold text-slate-900">{{ product.title }}</h3>
       <p class="text-base font-bold text-slate-900">${{ product.price }}</p>
       <p class="text-xs text-slate-500">Category: {{ product.category }}</p>
       <p class="text-xs text-slate-500">Rating: {{ product.rating }}</p>
+
       <div class="mt-3 flex items-center gap-2">
         <RouterLink
           :to="`/products/${product.id}`"

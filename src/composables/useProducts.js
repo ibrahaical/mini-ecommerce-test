@@ -8,9 +8,11 @@ export function useProducts({ pageSize = 12 } = {}) {
     const page = ref(1)
     const search = ref('')
     const category = ref('')
+
     const isLoading = ref(false)
     const isError = ref(false)
     const errorMessage = ref('')
+
     let controller = null
 
     const totalPages = computed(() => Math.max(1, Math.ceil(total.value / pageSize)))
@@ -45,7 +47,8 @@ export function useProducts({ pageSize = 12 } = {}) {
 
     async function loadCategories() {
         try {
-            categories.value = await fetchCategories()
+            const data = await fetchCategories()
+            categories.value = data
         } catch {
             categories.value = []
         }
@@ -69,8 +72,20 @@ export function useProducts({ pageSize = 12 } = {}) {
     }
 
     return {
-        products, categories, total, page, totalPages, search, category,
-        isLoading, isError, errorMessage, loadProducts, loadCategories,
-        setSearch, setCategory, setPage,
+        products,
+        categories,
+        total,
+        page,
+        totalPages,
+        search,
+        category,
+        isLoading,
+        isError,
+        errorMessage,
+        loadProducts,
+        loadCategories,
+        setSearch,
+        setCategory,
+        setPage,
     }
 }

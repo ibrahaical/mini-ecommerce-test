@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
   modelValue: { type: String, default: '' },
-  categories: { type: Array, default: () => [] }, 
+  categories: { type: Array, default: () => [] },
 })
 defineEmits(['update:modelValue'])
 </script>

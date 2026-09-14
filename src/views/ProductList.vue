@@ -34,6 +34,7 @@ onMounted(() => {
 <template>
   <section class="mx-auto max-w-6xl px-4 py-6">
     <h1 class="text-2xl font-bold text-slate-900">Products</h1>
+
     <div class="mt-4 flex flex-col gap-3 sm:flex-row">
       <SearchInput :model-value="search" class="sm:max-w-sm" @update:model-value="setSearch" />
       <CategoryFilter :model-value="category" :categories="categories" @update:model-value="setCategory" />

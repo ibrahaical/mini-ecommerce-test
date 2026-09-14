@@ -1,14 +1,29 @@
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+import { useFavoritesStore } from '@/stores/favorites'
+
+const favorites = useFavoritesStore()
+</script>
+
 <template>
-  <div class="min-h-screen bg-slate-50 text-slate-900">
-    <nav class="bg-white shadow-sm sticky top-0 z-10 px-4 py-4 flex justify-between items-center max-w-6xl mx-auto">
-      <router-link to="/" class="text-xl font-bold text-slate-900">Mini E-Commerce</router-link>
-      <div class="space-x-4">
-        <router-link to="/" class="hover:text-blue-600 font-medium">Products</router-link>
-        <router-link to="/favorites" class="hover:text-blue-600 font-medium">Favorites</router-link>
-      </div>
-    </nav>
-    <main class="container mx-auto px-4 py-8 max-w-6xl">
-      <router-view></router-view>
+  <div class="min-h-screen bg-slate-50">
+    <header class="border-b border-slate-200 bg-white">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <RouterLink to="/" class="text-lg font-bold text-slate-900">Mini Shop</RouterLink>
+        <RouterLink
+          to="/favorites"
+          class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900"
+        >
+          ♥ Favorites
+          <span v-if="favorites.count" class="rounded-full bg-slate-900 px-1.5 py-0.5 text-xs text-white">
+            {{ favorites.count }}
+          </span>
+        </RouterLink>
+      </nav>
+    </header>
+
+    <main>
+      <RouterView />
     </main>
   </div>
 </template>
