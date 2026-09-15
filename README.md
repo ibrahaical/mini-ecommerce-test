@@ -78,7 +78,7 @@ Beberapa poin *bonus tambahan* dari soal belum diimplementasikan pada versi ini 
 * Integrasi TypeScript
 * Unit Test
 * Skeleton Loading (Saat ini menggunakan Loading Spinner biasa)
-* Docker Containerization
+* Docker
 
 ## Manual Testing (Blackbox)
 
