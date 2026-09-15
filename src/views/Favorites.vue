@@ -26,7 +26,6 @@ async function loadFavoriteProducts() {
     const results = await Promise.all(
       favorites.ids.map((id) => fetchProductById(id).catch(() => null)),
     );
-    // Filter out null results (failed requests) so valid ones still render
     products.value = results.filter(Boolean);
   } catch {
     isError.value = true;
@@ -39,7 +38,6 @@ watch(() => favorites.ids, loadFavoriteProducts, { immediate: true })
 </script>
 
 <template>
-  <!-- Hero Section (left-aligned) -->
   <section class="bg-neutral-100 border-b border-neutral-200">
     <div class="mx-auto max-w-6xl px-4 py-12 sm:py-16">
       <RouterLink to="/" class="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 hover:text-neutral-800">
@@ -57,7 +55,6 @@ watch(() => favorites.ids, loadFavoriteProducts, { immediate: true })
     </div>
   </section>
 
-  <!-- Content Section -->
   <section class="mx-auto max-w-6xl px-4 py-8">
     <LoadingSpinner v-if="isLoading" />
 
@@ -78,7 +75,6 @@ watch(() => favorites.ids, loadFavoriteProducts, { immediate: true })
     </EmptyState>
 
     <template v-else>
-      <!-- Row: jumlah produk di kanan atas -->
       <div class="mb-6 flex items-center">
         <span class="py-1 text-sm font-light text-neutral-700">
           {{ favorites.ids.length }} produk tersimpan
