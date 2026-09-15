@@ -53,6 +53,8 @@ Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
 * **Axios** - HTTP client
 * **Tailwind CSS v4** - Responsive styling
 * **DummyJSON** - Product REST API
+* **WebRTC API** - Native P2P Communication
+* **Thunder Client** - API Testing & Exploration
 
 ## Fitur
 
@@ -97,11 +99,12 @@ Seluruh fitur telah melewati proses pengujian manual untuk memastikan aplikasi b
 
 AI digunakan sebagai **mentor diskusi dan referensi dokumentasi**, bukan sebagai *auto-generator* kode. ChatGPT (diskusi & konsultasi), Gemini (perencanaan milestone), dan Claude (validasi milestone & struktur), kecuali pada fitur **WebRTC P2P Text Chat** yang dibangun murni dengan AI coding assistant (Antigravity). Pengerjaan requirement utama dilakukan dan diuji secara manual dengan alur *milestone*:
 
-1. **Setup** - Inisialisasi Vue 3, Vite, Tailwind CSS, Vue Router, dan struktur folder.
-2. **API & State** - Integrasi DummyJSON menggunakan Axios serta pengelolaan state dan error.
-3. **Komponen** - Pembuatan komponen UI reusable seperti ProductCard, SearchInput, dan CategoryFilter.
-4. **Product List** - Implementasi daftar produk, pencarian, filter, dan pagination.
-5. **Detail & Favorite** - Implementasi detail produk dan sistem favorite dengan Pinia serta localStorage.
-6. **Finalisasi** - Pengujian, responsive UI, dokumentasi, dan deployment ke Cloudflare Pages.
+1. **API Testing** - Menganalisa struktur dan *behavior* response DummyJSON menggunakan **Thunder Client** sebelum menulis kode.
+2. **Setup** - Inisialisasi Vue 3, Vite, Tailwind CSS, Vue Router, dan struktur folder.
+3. **API & State** - Integrasi Axios, pembuatan *composable*, serta pengelolaan *state* dan *error*.
+4. **Komponen** - Pembuatan komponen UI reusable seperti ProductCard, SearchInput, dan CategoryFilter.
+5. **Product List** - Implementasi daftar produk, pencarian, filter, dan pagination.
+6. **Detail & Favorite** - Implementasi detail produk dan sistem favorite dengan Pinia serta localStorage.
+7. **Finalisasi** - Pengujian, responsive UI, dokumentasi, dan deployment ke Cloudflare Pages.
 
 Pendekatan ini membantu memastikan setiap fitur dipahami, diimplementasikan, dan diuji secara manual.
