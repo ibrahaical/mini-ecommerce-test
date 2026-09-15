@@ -66,7 +66,26 @@ Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
 * Loading, error, dan empty state
 * Responsive Mobile, Tablet, dan Desktop
 * SPA routing dengan Vue Router
-* **WebRTC P2P Text Chat** (Manual Signaling dengan Copy-Paste) - bisa dicoba dengan membuka 1 browser normal dan 1 browser dalam mode private (disarankan).
+* **WebRTC P2P Text koneksi Chat** (Manual Signaling dengan Copy-Paste) - bisa dicoba dengan membuka 1 browser normal dan 1 browser dalam mode private (disarankan).
+
+## Manual Testing (Blackbox)
+
+Seluruh fitur telah melewati proses pengujian manual untuk memastikan aplikasi berjalan sesuai dengan *requirement* dan siap digunakan di *production*.
+
+| Skenario Pengujian | Hasil yang Diharapkan | Status |
+|---|---|:---:|
+| **Koneksi API (Product List)** | Memuat halaman utama, menampilkan *Loading Spinner*, lalu merender daftar produk dengan benar. | ✅ Pass |
+| **Simulasi API Error** | Mematikan internet atau menggunakan block request, aplikasi tidak *crash* dan menampilkan UI `<ErrorState>` beserta tombol **Coba Lagi**. | ✅ Pass |
+| **Empty State (Pencarian)** | Mengetik kata kunci acak (misal: "zxcasdqwe"), aplikasi menampilkan UI `<EmptyState>` "Produk tidak ditemukan". | ✅ Pass |
+| **Search Debounce** | Mengetik dengan cepat tidak langsung memicu API, request dikirim setelah jeda berhenti mengetik (menghemat *bandwidth*). | ✅ Pass |
+| **Category Filter** | Memilih kategori dari *dropdown* berhasil mengubah daftar produk sesuai kategori terkait. | ✅ Pass |
+| **Product Detail & Gallery** | Mengklik produk masuk ke halaman detail. Mengklik *thumbnail* gambar berhasil merubah gambar utama tanpa nge-freeze. | ✅ Pass |
+| **Pagination** | Mengklik tombol *Next*, berpindah ke halaman 2. Tombol *Previous* otomatis *disabled* saat di halaman 1. | ✅ Pass |
+| **Toggle Favorite** | Mengklik tombol `♡` mengubah warna tombol dan mengupdate *badge counter* di Navbar secara *real-time*. | ✅ Pass |
+| **Data Persisten (LocalStorage)** | Menambahkan produk ke Favorite, melakukan *refresh* browser, produk tetap ada di halaman `/favorites`. | ✅ Pass |
+| **Halaman Favorite Kosong** | Menghapus semua produk dari Favorite, halaman memunculkan pesan "Belum ada produk tersimpan" (Empty State). | ✅ Pass |
+| **WebRTC P2P Chat (Bonus)** | Menghubungkan 2 browser berbeda via pertukaran *Offer/Answer*, memastikan status "Connected", dan pesan teks berhasil terkirim secara *real-time*. | ✅ Pass |
+| **Responsivitas Layar** | Mengubah ukuran layar (Desktop, Tablet, Mobile), memastikan layout *grid*, navigasi, dan galeri menyesuaikan dengan rapi tanpa ada elemen yang rusak atau *overflow*. | ✅ Pass |
 
 ## Known Issues
 
