@@ -9,6 +9,7 @@ defineEmits(["update:modelValue"]);
 <template>
   <select
     :value="modelValue"
+    aria-label="Filter berdasarkan kategori"
     class="w-40 rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 sm:w-56"
     @change="$emit('update:modelValue', $event.target.value)"
   >

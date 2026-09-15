@@ -56,8 +56,9 @@ Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
 * **WebRTC API** - Native P2P Communication
 * **Thunder Client** - API Testing & Exploration
 
-## Fitur
+## Status Fitur
 
+### Fitur yang Berhasil Diselesaikan
 * Daftar produk dari DummyJSON API
 * Search dengan debounce
 * Filter berdasarkan kategori
@@ -68,7 +69,16 @@ Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
 * Loading spinner, error, dan empty state
 * Responsive Mobile, Tablet, dan Desktop
 * SPA routing dengan Vue Router
-* **WebRTC P2P Text koneksi Chat** (Manual Signaling dengan Copy-Paste) - bisa dicoba dengan membuka 1 browser normal dan 1 browser dalam mode private (disarankan).
+* **Bonus:** WebRTC P2P Text Chat (Manual Signaling dengan Copy-Paste).
+* **Bonus:** Standar Accessibility (A11y) untuk dukungan Screen Reader & Keyboard Navigation.
+
+### Fitur yang Belum Diselesaikan (Optional Bonus)
+Beberapa poin *bonus tambahan* dari soal belum diimplementasikan pada versi ini untuk berfokus pada stabilitas fitur utama. Fitur yang belum diselesaikan, antara lain:
+* WebRTC Video/Audio Call (Camera/Mic toggle)
+* Integrasi TypeScript
+* Unit Test
+* Skeleton Loading (Saat ini menggunakan Loading Spinner biasa)
+* Docker Containerization
 
 ## Manual Testing (Blackbox)
 

@@ -37,8 +37,8 @@ watch(() => props.id, load)
 
 <template>
   <section class="mx-auto max-w-4xl px-4 py-8">
-    <RouterLink to="/" class="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 hover:text-neutral-800 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+    <RouterLink to="/" aria-label="Kembali ke daftar produk" class="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-500 hover:text-neutral-800 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
       </svg>
       Back to Products
@@ -54,9 +54,11 @@ watch(() => props.id, load)
         </div>
         <div v-if="product.images?.length > 1" class="mt-3 flex gap-2 overflow-x-auto pb-2">
           <button
-            v-for="img in product.images"
+            v-for="(img, index) in product.images"
             :key="img"
             type="button"
+            :aria-label="`Pilih gambar ${index + 1}`"
+            :aria-pressed="img === activeImage"
             class="h-16 w-16 shrink-0 overflow-hidden rounded-md border"
             :class="img === activeImage ? 'border-neutral-900' : 'border-neutral-200'"
             @click="activeImage = img"
@@ -93,6 +95,8 @@ watch(() => props.id, load)
         <button
           type="button"
           class="mt-6 w-full rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50 transition-colors"
+          :aria-label="favorites.isFavorite(product.id) ? `Hapus ${product.title} dari favorit` : `Tambah ${product.title} ke favorit`"
+          :aria-pressed="favorites.isFavorite(product.id)"
           @click="favorites.toggle(product.id)"
         >
           {{ favorites.isFavorite(product.id) ? '♥ Favorite' : '♡ Add to Favorite' }}

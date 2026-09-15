@@ -89,7 +89,8 @@ onMounted(() => {
         <button
           type="button"
           class="rounded-md border border-neutral-300 px-3 py-1.5 text-sm disabled:opacity-40"
-          :disabled="page <= 1"
+          :disabled="page === 1"
+          aria-label="Halaman sebelumnya"
           @click="setPage(page - 1)"
         >
           Previous
@@ -101,6 +102,7 @@ onMounted(() => {
           type="button"
           class="rounded-md border border-neutral-300 px-3 py-1.5 text-sm disabled:opacity-40"
           :disabled="page >= totalPages"
+          aria-label="Halaman selanjutnya"
           @click="setPage(page + 1)"
         >
           Next
