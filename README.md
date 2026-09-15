@@ -75,7 +75,7 @@ Seluruh fitur telah melewati proses pengujian manual untuk memastikan aplikasi b
 | Skenario Pengujian | Hasil yang Diharapkan | Status |
 |---|---|:---:|
 | **Koneksi API (Product List)** | Memuat halaman utama, menampilkan *Loading Spinner*, lalu merender daftar produk dengan benar. | ✅ Pass |
-| **Simulasi API Error** | Mematikan internet atau mengganti URL API dengan URL yang salah, aplikasi tidak *crash* dan berhasil menampilkan UI `<ErrorState>` beserta tombol **Coba Lagi**. | ✅ Pass |
+| **Simulasi API Error** | Mengganti URL API dengan URL yang salah, aplikasi tidak *crash* dan berhasil menampilkan UI `<ErrorState>` beserta tombol **Coba Lagi**. | ✅ Pass |
 | **Empty State (Pencarian)** | Mengetik kata kunci acak (misal: "zxcasdqwe"), aplikasi menampilkan UI `<EmptyState>` "Produk tidak ditemukan". | ✅ Pass |
 | **Search Debounce** | Mengetik dengan cepat tidak langsung memicu API, request dikirim setelah jeda berhenti mengetik (menghemat *bandwidth*). | ✅ Pass |
 | **Category Filter** | Memilih kategori dari *dropdown* berhasil mengubah daftar produk sesuai kategori terkait. | ✅ Pass |
