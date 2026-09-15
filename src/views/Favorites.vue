@@ -24,9 +24,10 @@ async function loadFavoriteProducts() {
   isError.value = false;
   try {
     const results = await Promise.all(
-      favorites.ids.map((id) => fetchProductById(id)),
+      favorites.ids.map((id) => fetchProductById(id).catch(() => null)),
     );
-    products.value = results;
+    // Filter out null results (failed requests) so valid ones still render
+    products.value = results.filter(Boolean);
   } catch {
     isError.value = true;
   } finally {

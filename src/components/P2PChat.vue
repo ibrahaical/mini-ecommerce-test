@@ -1,5 +1,5 @@
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onUnmounted } from 'vue'
 
 const isOpen = ref(false)
 const status = ref('disconnected')
@@ -148,6 +148,11 @@ function scrollToBottom() {
 function toggleChat() {
   isOpen.value = !isOpen.value
 }
+
+// Mencegah Memory Leak saat komponen di-unmount dari DOM
+onUnmounted(() => {
+  resetState()
+})
 
 function endChat() {
   resetState()
