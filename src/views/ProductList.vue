@@ -32,10 +32,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="bg-neutral-100">
+  <section class="border-b border-neutral-200 bg-neutral-100">
     <div class="mx-auto max-w-6xl px-4 py-12 text-center sm:py-16">
       <h1
-        class="mt-2 text-3xl font-semibold tracking-tight text-neutral-800 sm:text-4xl"
+        class="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl"
       >
         Discover Our Products
       </h1>
@@ -53,8 +53,8 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <section class="mx-auto max-w-6xl px-4 py-6">
-    <div class="flex justify-end">
+  <section class="mx-auto max-w-6xl px-4 py-8">
+    <div class="mb-6 flex justify-end">
       <CategoryFilter
         :model-value="category"
         :categories="categories"
@@ -76,7 +76,7 @@ onMounted(() => {
 
     <template v-else>
       <div
-        class="mt-6 grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4"
+        class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4"
       >
         <ProductCard
           v-for="product in products"

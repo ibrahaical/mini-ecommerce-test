@@ -66,11 +66,13 @@ Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
 * Loading, error, dan empty state
 * Responsive Mobile, Tablet, dan Desktop
 * SPA routing dengan Vue Router
-* **WebRTC P2P Text Chat** (Manual Signaling dengan Copy-Paste)
+* **WebRTC P2P Text Chat** (Manual Signaling dengan Copy-Paste) - bisa dicoba dengan membuka 1 browser normal dan 1 browser dalam mode private (disarankan).
 
 ## Known Issues
 
 1. **Filter Search & Category Tidak Bisa Digabungkan** karena keterbatasan DummyJSON API (`/products/search` dan `/products/category/{slug}` adalah endpoint terpisah). Saat ini, penggunaan search akan mereset filter kategori, dan sebaliknya.
+2. **WebRTC P2P Chat Ter-reset di Mobile:** Saat berpindah aplikasi di HP (misal ke WhatsApp untuk menyalin kode), OS sering melakukan *refresh* paksa pada tab browser untuk menghemat RAM. Karena koneksi WebRTC murni berjalan di RAM (tidak bisa di-save ke `localStorage`), proses *refresh* ini akan menghancurkan koneksi dan mereset chat termasuk pada saat copy/paste offer dan answer.
+3. **Keterbatasan Jaringan WebRTC:** Chat bisa digunakan antar jaringan berbeda (misal 4G dan WiFi) karena sudah dikonfigurasi menggunakan *STUN Server* publik milik Google. Namun, koneksi akan **gagal** jika salah satu pengguna menggunakan jaringan kantor/publik dengan *Firewall (Symmetric NAT)* yang ketat (karena butuh *TURN Server* berbayar).
 
 ## Penggunaan AI & Alur Pengerjaan
 
