@@ -38,13 +38,13 @@ const favorites = useFavoritesStore();
       <div class="mt-3 flex items-center gap-1">
         <RouterLink
           :to="`/products/${product.id}`"
-          class="flex-1 rounded-md bg-neutral-800 px-3 py-2 text-center text-xs font-medium text-white hover:bg-neutral-700"
+          class="flex h-8 flex-1 items-center justify-center rounded-md border border-transparent bg-neutral-800 px-3 text-xs font-medium text-white hover:bg-neutral-700 transition-colors"
         >
           Lihat Detail
         </RouterLink>
         <button
           type="button"
-          class="rounded-md border border-neutral-300 p-2 text-xs hover:bg-neutral-50"
+          class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-neutral-300 text-xs hover:bg-neutral-50 transition-colors"
           :aria-pressed="favorites.isFavorite(product.id)"
           @click="favorites.toggle(product.id)"
         >
