@@ -65,7 +65,7 @@ Pendekatan teknis yang digunakan untuk memenuhi kriteria *technical test*:
 * Galeri gambar produk
 * Pagination Previous/Next
 * Favorite dengan `localStorage`
-* Loading, error, dan empty state
+* Loading spinner, error, dan empty state
 * Responsive Mobile, Tablet, dan Desktop
 * SPA routing dengan Vue Router
 * **WebRTC P2P Text koneksi Chat** (Manual Signaling dengan Copy-Paste) - bisa dicoba dengan membuka 1 browser normal dan 1 browser dalam mode private (disarankan).
