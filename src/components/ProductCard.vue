@@ -23,9 +23,9 @@ const favorites = useFavoritesStore();
     </div>
 
     <div class="flex flex-1 flex-col gap-1 p-2">
-      <h3 class="line-clamp-1 text-sm font-semibold text-neutral-900">
+      <h2 class="line-clamp-1 text-sm font-semibold text-neutral-900">
         {{ product.title }}
-      </h3>
+      </h2>
       <p class="flex items-center gap-0.5 text-xs font-normal text-neutral-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-neutral-800" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>

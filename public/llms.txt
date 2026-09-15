@@ -1,0 +1,6 @@
+# Mini E-Commerce (MiniShop.)
+
+Welcome to the Mini E-Commerce platform. 
+
+This site is a Vue 3 Single Page Application (SPA).
+You can find our main products here: [Products](/)
